@@ -1,0 +1,10 @@
+const nav=document.querySelector('.nav');addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>60),{passive:true});
+document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>document.body.classList.remove('open'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.r').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+const L=[...document.querySelectorAll('a.lb')],box=document.getElementById('lbx'),im=box.querySelector('img'),cp=box.querySelector('figcaption');let k=0;
+const show=i=>{k=(i+L.length)%L.length;im.src=L[k].href;cp.textContent=L[k].dataset.cap;box.hidden=false};
+L.forEach((a,i)=>a.onclick=e=>{e.preventDefault();show(i)});
+box.querySelector('.x').onclick=()=>box.hidden=true;box.querySelector('.pv').onclick=()=>show(k-1);box.querySelector('.nx').onclick=()=>show(k+1);
+box.onclick=e=>{if(e.target===box)box.hidden=true};
+addEventListener('keydown',e=>{if(box.hidden)return;if(e.key=='Escape')box.hidden=true;if(e.key=='ArrowRight')show(k+1);if(e.key=='ArrowLeft')show(k-1)});
