@@ -63,3 +63,4 @@ nav{position:fixed;inset:0;background:var(--ch);flex-direction:column;justify-co
 
 .about h2{margin:.2em 0 .5em}.stats{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);margin-top:34px;border-top:1px solid #3a3b42}.stats li{padding:18px 14px 0 0}.stats b{display:block;font:1.6rem "Archivo Black";color:var(--br2)}.stats span{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ls2)}
 @media(max-width:600px){.stats{grid-template-columns:1fr 1fr}.stats li:last-child{grid-column:1/-1}}
+.p .cv{display:inline-block;margin-top:12px;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--br2);text-decoration:none;border-bottom:1px solid transparent}.p .cv:hover{border-color:var(--br2)}
